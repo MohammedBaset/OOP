@@ -20,11 +20,7 @@ void main(){
 
   print(' ');
 
-  // animal dog = animal('Tom');
-  // print('dog.name');
-
-  print(animal.className);
-  animal.test();
+  Dog dog = Dog('Tom', 'black');
 }
 
 class Mobile{
@@ -47,16 +43,25 @@ class Mobile{
   }
 }
 
-class animal{
+class Dog extends animal{
+
+  String color;
+
+  Dog(super.name, this.color);
+
+}
+
+abstract class animal{
   String name;
-  static String className = 'animal class';
 
-  animal(this.name){
+  animal(this.name);
 
+  eat(){
+    print('$name is eating');
   }
 
-  static test (){
-    print('test');
+  makeSound(){
+    print('$name is making sounds');
   }
 
 }
